@@ -11,11 +11,9 @@ body {
 #main-title {
   text-align: center;
 }
-
 #body {
   padding: 10px;
 }
-
 .answers {
-  color: blueviolet;
+  color: #8a2be2;
 }
