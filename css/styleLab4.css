@@ -1,0 +1,15 @@
+body {
+    margin: 0 auto;
+    max-width: 50em;
+    background-color: #001B48;
+    font-family: "Helvetica", "Arial", sans-serif;
+    color: aliceblue;
+    line-height: 1.5;
+    padding: 4em 1em;
+}
+
+h1 {
+    color: azure;
+    margin-top: 1em;
+    padding-top: 1em;
+}
