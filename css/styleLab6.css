@@ -1,0 +1,106 @@
+body {
+  background-image: url("../public/images/background3.jpg");
+  margin: 130px auto;
+  font-family: "Helvetica", "Arial", sans-serif;
+  color: black;
+  line-height: 1.5;
+}
+
+#title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  color: black;
+  font-style: italic;
+  font-size: 48px;
+  font-family: "Pacifico";
+}
+
+#first_button {
+  border: none;
+  background-color: aliceblue;
+  color: black;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  padding: 15px 50px;
+  border-radius: 15px;
+  font-family: "Akaya Kanadaka";
+  font-size: 25px;
+}
+#first_button:hover {
+  background-color: rgb(170, 215, 255);
+  cursor: pointer;
+}
+
+.validator_header {
+  background-color: darkblue;
+  color: aliceblue;
+  justify-content: center;
+  width: 700px;
+  height: 150px;
+  border-radius: 10px;
+  margin: 0 auto;
+}
+
+.view {
+  display: none;
+}
+.active {
+  display: block;
+}
+
+#welcome {
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  font-family: "Pacifico";
+  font-size: 55px;
+  margin: 0;
+}
+
+#credentials {
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  font-family: "Akaya Kanadaka";
+  font-size: 35px;
+  margin: 0;
+}
+#pass-field {
+  justify-items: center;
+  margin-top: 15px;
+}
+#password {
+  border: none;
+  background-color: aliceblue;
+  font-size: large;
+  border-radius: 10px;
+  padding-left: 10px;
+  margin: 10px 5px;
+}
+#confirm-pass {
+  border: none;
+  background-color: aliceblue;
+  font-size: large;
+  border-radius: 10px;
+  padding-left: 10px;
+  margin: 5px;
+}
+
+.pass-instructions {
+  justify-items: left;
+}
+
+#instructions {
+  justify-items: left;
+}
+
+.error {
+  color: red;
+}
+
+.valid {
+  color: green;
+}
