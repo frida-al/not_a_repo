@@ -10,3 +10,7 @@ function promedio(array) {
 }
 
 console.log(promedio(miArreglo));
+
+const file_system = require("fs");
+const stringTexto = "Hola, para el laboratorio 8";
+file_system.writeFileSync("Labo8.txt", stringTexto);
