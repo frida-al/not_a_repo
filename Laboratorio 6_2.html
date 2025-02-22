@@ -47,7 +47,43 @@
             id="confirm-pass"
             name="confirm-pass"
             placeholder="Confirm password" />
+          <p id="confirmationFeedback" class="error"></p>
         </div>
+        <button
+          id="second_button"
+          type="button"
+          onclick="changeVista2('view3')"
+          disabled>
+          Continue
+        </button>
+      </div>
+      <div id="view3" class="view">
+        <h1 id="title">Thank you for creating your credentials</h1>
+        <ul>
+          ¿Por qué es una buena práctica usar JavaScript para checar que sean
+          válidos los inputs de las formas antes de enviar los datos al
+          servidor?
+        </ul>
+        <li>
+          Porque esto nos permite evitar que en la base de datos se guarden
+          tipos de datos que no se requieren y es un primer filtro para detectar
+          el error.
+        </li>
+        <ul>
+          ¿Cómo puedes saltarte la seguridad de validaciones hechas con
+          JavaScript?
+        </ul>
+        <li>
+          Desactivando JavaScript o utilizando las herramientas del
+          desarrollador para quitar restricciones que se han puesto
+        </li>
+        <ul>
+          Si te puedes saltar la seguridad de las validaciones de JavaScript,
+          entonces ¿por qué la primera pregunta dice que es una buena práctica?
+        </ul>
+        <li>
+          Porque de esta manera se están optimizando los recursos del servidor.
+        </li>
       </div>
     </section>
     <script src="js/myScriptLab6.js"></script>

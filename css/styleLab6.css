@@ -17,7 +17,8 @@ body {
   font-family: "Pacifico";
 }
 
-#first_button {
+#first_button,
+#second_button {
   border: none;
   background-color: aliceblue;
   color: black;
@@ -28,6 +29,9 @@ body {
   border-radius: 15px;
   font-family: "Akaya Kanadaka";
   font-size: 25px;
+}
+#second_button:disabled {
+  background-color: lightgrey;
 }
 #first_button:hover {
   background-color: rgb(170, 215, 255);
