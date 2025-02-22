@@ -1,8 +1,8 @@
-//const file_system = require("fs");
+//
 
 //file_system.writeFileSync("hola.txt", "Hola desde node");
 
-setTimeout(() => {
+/*setTimeout(() => {
   console.log("jojo te hackee");
 }, 20000);
 
@@ -22,4 +22,6 @@ const server = http.createServer((request, response) => {
   response.end();
 });
 
-server.listen(3001);
+server.listen(3001);*/
+const stringTexto = "Hola, para el laboratorio 8";
+file_system.writeFileSync("Labo8.txt", stringTexto);
