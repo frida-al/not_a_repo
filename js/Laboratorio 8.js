@@ -38,3 +38,15 @@ function wordscounter(array) {
   }
 }
 console.log(wordscounter(miArreglo2));
+
+const http = require("http");
+
+const server = http.createServer((request, response) => {
+  console.log(request.url);
+  let page = file_system.readFileSync("Laboratorio 4.html");
+  //response.setHeader("Content-Type", "text/html");
+  response.write(page);
+  response.end();
+});
+
+server.listen(3002);
