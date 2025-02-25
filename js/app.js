@@ -23,5 +23,5 @@ const server = http.createServer((request, response) => {
 });
 
 server.listen(3001);*/
-const stringTexto = "Hola, para el laboratorio 8";
-file_system.writeFileSync("Labo8.txt", stringTexto);
+//const stringTexto = "Hola, para el laboratorio 8";
+//file_system.writeFileSync("Labo8.txt", stringTexto);
