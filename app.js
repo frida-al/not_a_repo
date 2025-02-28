@@ -5,11 +5,11 @@ const bodyParser = require("body-parser");
 
 app.use(bodyParser.urlencoded({ extended: false }));
 
-//Middleware
+app.set("view engine", "ejs");
+app.set("views", "views");
+
 app.use((request, response, next) => {
   console.log("Middleware!");
-
-  //Le permite a la petición avanzar hacia el siguiente middleware
   next();
 });
 
@@ -20,8 +20,11 @@ app.use("/plantas", plantasRoutes);
 app.use((request, response, next) => {
   console.log("Otro middleware!");
 
-  //Manda la respuesta
-  response.send("¡Hola mundo!");
+  response.statusCode = 404;
+  response.send("No se encuentra el recurso que estás buscando");
 });
+
+const path = require("path");
+app.use(express.static(path.join(__dirname, "public")));
 
 app.listen(3003);
