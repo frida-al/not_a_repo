@@ -1,37 +1,21 @@
 const express = require("express");
 const fs = require("fs");
 const router = express.Router();
+const plantas_controller = require("../controllers/plantas.controller");
 
-const plantas = [];
-
-router.get("/", (request, response, next) => {
+/*router.get("/", (request, response, next) => {
   response.render("inicio_plantas");
-});
+});*/
 //router.get es para registrar un middleware para peticiones HTTP GET
-router.get("/agregar", (request, response, next) => {
-  response.render("agregar_planta");
-});
+router.get("/agregar", plantas_controller.get_agregar);
 
 //router.post es para registrar un middleware para peticiones HTTP POST
-router.post("/listar", (request, response, next) => {
-  console.log(request.body);
-  plantas.push(request.body.nombre);
+router.post("/listar", plantas_controller.post_listar);
 
-  response.render("lista_plantas", {
-    plantas: plantas,
-  });
-});
+router.get("/gallery", plantas_controller.get_gallery);
 
-router.get("/gallery", (request, response, next) => {
-  response.render("gallery_plantas");
-});
+router.get("/regar", plantas_controller.get_regar);
 
-const path = require("path");
-
-router.get("/regar", (request, response, next) => {
-  response.sendFile(
-    path.join(__dirname, "..", "Laboratorios", "Laboratorio 1.html")
-  );
-});
+router.get("/", plantas_controller.get_root);
 
 module.exports = router;
