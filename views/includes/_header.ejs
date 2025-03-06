@@ -29,10 +29,18 @@
       </div>
       <div class="navbar-end">
         <div class="navbar-item">
-          <a href="/plantas/gallery" class="navbar-item button is-danger">
-            Gallery
-          </a>
+          <% if (isLoggedIn) { %>
+          <a href="/plantas/gallery" class="navbar-item is-danger"> Gallery </a>
+
           <a href="/plantas/agregar" class="navbar-item"> ADD </a>
+          <% } %> <% if (isLoggedIn) { %> <%= username %> |
+          <a href="/users/logout" class="button is-danger"> Logout </a>
+          <% } else { %>
+          <a class="button is-primary">
+            <strong>Sign up</strong>
+          </a>
+          <a href="/users/login" class="button is-light"> Log in </a>
+          <% } %>
         </div>
       </div>
     </nav>
