@@ -16,6 +16,7 @@ router.get("/gallery", plantas_controller.get_gallery);
 
 router.get("/regar", plantas_controller.get_regar);
 
+router.get("/:id", plantas_controller.get_root);
 router.get("/", plantas_controller.get_root);
 
 module.exports = router;
