@@ -29,10 +29,12 @@
       </div>
       <div class="navbar-end">
         <div class="navbar-item">
-          <% if (isLoggedIn) { %>
+          <% if (isLoggedIn) { %> <% for (let privilegio of privilegios) { %> <%
+          if(privilegio.nombre == "agregar plantas") { %>
           <a href="/plantas/gallery" class="navbar-item is-danger"> Gallery </a>
           <a href="/plantas/agregar" class="navbar-item"> ADD </a>
-          <% } %> <% if (isLoggedIn) { %> <%= username %> |
+
+          <% } %> <% } %> <% } %> <% if (isLoggedIn) { %> <%= username %> |
           <a href="/users/logout" class="button is-danger"> Logout </a>
           <% } else { %>
           <a href="/users/signup" class="button is-primary">
