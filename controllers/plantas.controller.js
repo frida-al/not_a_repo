@@ -11,7 +11,7 @@ exports.get_agregar = (request, response, next) => {
 
 exports.post_listar = (request, response, next) => {
   console.log(request.body);
-  const mi_planta = new Planta(request.body.nombre);
+  const mi_planta = new Planta(request.body.nombre, request.file.filename);
   mi_planta
     .save()
     .then(() => {

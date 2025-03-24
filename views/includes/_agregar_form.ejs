@@ -1,4 +1,8 @@
-<form action="/plantas/agregar" method="POST">
+<form
+  action="/plantas/agregar"
+  method="POST"
+  enctype="multipart/form-data"
+  class="ml-5">
   <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
   <label for="nombre" class="label">Nombre de la planta</label>
   <input
@@ -8,5 +12,18 @@
     id="nombre"
     name="nombre" />
   <br /><br />
-  <input class="button is-info" type="submit" value="Enviar" />
+  <div class="file">
+    <label for="imagen" class="file-label">
+      <input
+        type="file"
+        class="file-input"
+        id="imagen"
+        name="imagen"
+        accept=".jpg, .png, .jpeg" />
+      <span class="file-cta">
+        <span class="file-label"> Escoge una imagen… </span>
+      </span>
+    </label>
+  </div>
+  <input class="button is-danger" type="submit" value="Enviar" />
 </form>
