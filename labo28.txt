@@ -1,0 +1,42 @@
+Se utilizó un trigger para el llenado automático de la tabla 'pruebasAspirante', basandose en el llenado de la tabla 'perteneceGrupo'
+
+DELIMITER //
+
+CREATE TRIGGER pruebasAspirante_AI 
+AFTER INSERT ON pertenecegrupo 
+FOR EACH ROW 
+BEGIN
+    DECLARE v_idGrupo VARCHAR(36);
+    DECLARE v_idPrueba INT;
+    DECLARE done INT DEFAULT FALSE;
+
+    DECLARE prueba_cursor CURSOR FOR 
+        SELECT idPrueba 
+        FROM tienepruebas 
+        WHERE idGrupo = (SELECT idGrupo FROM pertenecegrupo WHERE idUsuario = NEW.idUsuario LIMIT 1);
+
+    DECLARE CONTINUE HANDLER FOR NOT FOUND SET done = TRUE;
+
+    SELECT idGrupo INTO v_idGrupo 
+    FROM pertenecegrupo 
+    WHERE idUsuario = NEW.idUsuario 
+    LIMIT 1;  
+
+    OPEN prueba_cursor;
+
+    read_loop: LOOP
+        FETCH prueba_cursor INTO v_idPrueba;
+        IF done THEN
+            LEAVE read_loop;
+        END IF;
+
+        INSERT INTO pruebasAspirante (idUsuario, idGrupo, idPrueba, Estatus) 
+        VALUES (NEW.idUsuario, v_idGrupo, v_idPrueba, 'Por comenzar'); 
+    END LOOP;
+
+    CLOSE prueba_cursor;
+END;
+
+//
+
+DELIMITER ;
